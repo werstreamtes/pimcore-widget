@@ -10,7 +10,7 @@ use Pimcore\Extension\Bundle\Installer\InstallerInterface;
 use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
 use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 
-class LokaliseTranslateBundle extends AbstractPimcoreBundle implements PimcoreBundleInterface, PimcoreBundleAdminClassicInterface
+class WSEWidgetPimcoreBundle extends AbstractPimcoreBundle implements PimcoreBundleInterface, PimcoreBundleAdminClassicInterface
 {
 
     use BundleAdminClassicTrait;
