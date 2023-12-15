@@ -1,5 +1,19 @@
 {
   "name": "werstreamtes/pimcore-widget",
   "description": "WerStreamt.es Widget as Pimcore Brick",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "type": "pimcore-bundle",
+
+  "autoload": {
+    "psr-4": {
+      "WerStreamtEs\\WidgetPimcoreBundle\\": "src/WidgetPimcoreBundle"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "WerStreamtEs\\WidgetPimcoreBundle\\ChatgptPimcoreBundle"
+      ]
+    }
+  }
 }
