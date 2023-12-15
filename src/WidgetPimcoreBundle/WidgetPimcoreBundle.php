@@ -11,6 +11,11 @@ class WidgetPimcoreBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
 
+    public function getInstaller()
+    {
+        return $this->container->get(Installer::class);
+    }
+
     protected function getComposerPackageName(): string
     {
         // getVersion() will use this name to read the version from
