@@ -1,34 +1,97 @@
 <?php
-// src/Document/Areabrick/Iframe.php
-
-die("yes");
 
 namespace App\Document\Areabrick;
 
 use Pimcore\Extension\Document\Areabrick\AbstractTemplateAreabrick;
+use Pimcore\Extension\Document\Areabrick\EditableDialogBoxConfiguration;
+use Pimcore\Extension\Document\Areabrick\EditableDialogBoxInterface;
+use Pimcore\Model\Document\Editable\Area\Info;
 
-class Widget extends AbstractTemplateAreabrick
+class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInterface
 {
-    public function getName()
+
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
-        return 'Widget';
+        return "WerStreamt.es? Widget";
     }
 
-    public function getDescription()
+
+    /**
+     * @param Info $info
+     * @return void
+     */
+    public function action(Info $info)
     {
-        return 'fooo';
+        // do stuff before the brick is rendered.
     }
 
-    public function getTemplateLocation()
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return "Widget zum checken der Verfügbarkeit von Filmen und Serien";
+    }
+
+    /**
+     * @return string
+     */
+    public function getTemplateLocation(): string
     {
         return static::TEMPLATE_LOCATION_GLOBAL;
     }
 
+    /**
+     * @param $area
+     * @param $info
+     * @return EditableDialogBoxConfiguration
+     */
+    public function getEditableDialogBoxConfiguration($area, $info): EditableDialogBoxConfiguration
+    {
+
+        $config = new EditableDialogBoxConfiguration();
+        $config->setWidth(240);
+        $config->setHeight(250);
+
+        $config->setItems([
+            "type" => "tabpanel",
+            "items" => [
+                [
+                    "type" => "panel",
+                    "title" => "Einstellungen",
+                    "items" => [
+                        [
+                            "type" => "checkbox",
+                            "name" => "Disc",
+                            "label" => "DVD / Blu-ray anzeigen"
+                        ],
+                        [
+                            "type" => "checkbox",
+                            "name" => "TV",
+                            "label" => "TV anzeigen"
+                        ],
+                        [
+                            "type" => "checkbox",
+                            "name" => "Trailer",
+                            "label" => "Trailer anzeigen"
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        return $config;
+
+    }
+
+    /**
+     * @return bool
+     */
     public function needsReload(): bool
     {
-        // optional
-        // here you can decide whether adding this bricks should trigger a reload
-        // in the editing interface, this could be necessary in some cases. default=false
         return false;
     }
 
