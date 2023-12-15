@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-final class PimcoreTinymceExtension extends ConfigurableExtension
+final class WidgetPimcoreBundleExtension extends ConfigurableExtension
 {
     public function loadInternal(array $config, ContainerBuilder $container): void
     {
