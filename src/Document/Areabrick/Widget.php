@@ -15,9 +15,8 @@ class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInter
      */
     public function getName(): string
     {
-        return "WerStreamt.es? Widget";
+        return "WerStreamt.es? Widget2";
     }
-
 
     /**
      * @param Info $info

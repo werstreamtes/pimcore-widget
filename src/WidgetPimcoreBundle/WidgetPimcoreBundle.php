@@ -9,17 +9,11 @@ use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 
 class WidgetPimcoreBundle extends AbstractPimcoreBundle
 {
-    use PackageVersionTrait;
 
-    public function getInstaller()
-    {
-        return $this->container->get(Installer::class);
-    }
+    use PackageVersionTrait;
 
     protected function getComposerPackageName(): string
     {
-        // getVersion() will use this name to read the version from
-        // PackageVersions and return a normalized value
         return 'werstreamtes/pimcore-widget';
     }
 }

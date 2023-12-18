@@ -1,4 +1,8 @@
 services:
+    App\Document\Areabrick\Widget:
+        arguments: [ '@logger' ]
+        tags:
+            - { name: pimcore.area.brick, id: widget }
     _defaults:
         autowire: true
         autoconfigure: true
