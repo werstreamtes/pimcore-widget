@@ -3,12 +3,3 @@ services:
         autowire: true
         autoconfigure: true
 
-    #
-    # INSTALLER
-    #
-
-    WerStreamtEs\WidgetPimcoreBundle\Installer:
-        public: true
-        arguments:
-            $bundle: "@=service('kernel').getBundle('WidgetPimcoreBundle')"
-
