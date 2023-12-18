@@ -6,7 +6,7 @@
   "autoload": {
     "psr-4": {
       "WerStreamtEs\\WidgetPimcoreBundle\\": "src/WidgetPimcoreBundle",
-      "App\\Document\\Areabrick\\Widget" : ""
+      "App\\Document\\Areabrick\\" : "src/Document/Areabrick/"
     }
   },
   "extra": {
