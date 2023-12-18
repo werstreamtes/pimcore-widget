@@ -5,7 +5,8 @@
   "type": "pimcore-bundle",
   "autoload": {
     "psr-4": {
-      "WerStreamtEs\\WidgetPimcoreBundle\\": "src/WidgetPimcoreBundle"
+      "WerStreamtEs\\WidgetPimcoreBundle\\": "src/WidgetPimcoreBundle",
+      "App\\Document\\Areabrick\\" : "src/Document/Areabrick/Widget"
     }
   },
   "extra": {
