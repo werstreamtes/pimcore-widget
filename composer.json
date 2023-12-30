@@ -17,7 +17,7 @@
   },
   "extra": {
     "installer-paths": {
-      "src/{$name}": ["vendor/package"]
+      "src/{$name}": ["vendor/werstreamtes"]
     },
     "pimcore": {
       "bundles": [
