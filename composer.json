@@ -1,5 +1,5 @@
 {
-  "name": "WerStreamtEsPimcoreWidget",
+  "name": "werstreamtes/pimcore-widget",
   "description": "WerStreamt.es Widget as Pimcore Brick",
   "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
