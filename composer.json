@@ -3,6 +3,9 @@
   "description": "WerStreamt.es Widget as Pimcore Brick",
   "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
+  "require" : {
+    "composer/installers": "~1.0"
+  },
   "config": {
     "vendor-dir": "path/to/wherever"
   },
