@@ -13,6 +13,9 @@
     }
   },
   "extra": {
+    "installer-paths": {
+      "src/{$name}": ["vendor/package"]
+    },
     "pimcore": {
       "bundles": [
         "WerStreamtEs\\WidgetPimcoreBundle\\ChatgptPimcoreBundle"
