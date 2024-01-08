@@ -3,27 +3,13 @@
   "description": "WerStreamt.es Widget as Pimcore Brick",
   "license": "GPL-3.0-or-later",
   "type": "library",
-  "require" : {
+  "require": {
     "composer/installers": "~1.0"
   },
-  "config": {
-    "vendor-dir": "path/to/wherever"
-  },
-  "autoload": {
-    "psr-4": {
-      "WerStreamtEs\\WidgetPimcoreBundle\\": "src/WidgetPimcoreBundle",
-      "App\\Document\\Areabrick\\" : "src/Document/Areabrick/"
-    }
-  },
   "extra": {
-    "installer-types": ["library"],
     "installer-paths": {
-      "special/package/": ["my/package"],
-      "path/to/libraries/{$name}/": ["type:library"]
-    },
-    "pimcore": {
-      "bundles": [
-        "WerStreamtEs\\WidgetPimcoreBundle\\ChatgptPimcoreBundle"
+      "your/custom/path/{$name}/": [
+        "vendor:my_organization"
       ]
     }
   }
