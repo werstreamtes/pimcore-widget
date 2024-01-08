@@ -8,7 +8,7 @@
   },
   "extra": {
     "installer-paths": {
-      "your/custom/path/{$name}/": [
+      "src/{$name}/": [
         "vendor:my_organization"
       ]
     }
