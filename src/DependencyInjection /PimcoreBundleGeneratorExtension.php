@@ -22,7 +22,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class WerStreamtEsWidgetBundleExtension extends Extension
+class PimcoreBundleGeneratorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
