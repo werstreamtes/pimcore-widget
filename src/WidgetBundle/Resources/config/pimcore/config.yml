@@ -10,7 +10,7 @@ parameters:
         content_image: 'contentImage'
         gallery_image: 'galleryImage'
 
-news:
+widget:
     list:
         sort_by: 'date'
         sort_by_store:
@@ -30,7 +30,7 @@ news:
                     name: 'news.latest'
     detail: ~
     entry_types:
-        default: 'news'
+        default: 'widget'
         items:
             news:
                 name: 'news.entry_type.news'

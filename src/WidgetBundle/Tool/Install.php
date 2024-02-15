@@ -50,11 +50,7 @@ class Install extends SettingsStoreAwareInstaller
             $this->currentVersion = '';
         }
 
-        $this->installStaticRoutes();
         $this->installOrUpdateConfigFile();
-        $this->installClasses();
-        $this->installTranslations();
-        $this->createFolders();
 
         parent::install();
     }
@@ -68,117 +64,6 @@ class Install extends SettingsStoreAwareInstaller
         $config = ['version' => $this->currentVersion];
         $yml = Yaml::dump($config);
         file_put_contents(Configuration::SYSTEM_CONFIG_FILE_PATH, $yml);
-    }
-
-    public function installClasses(): void
-    {
-        foreach ($this->getClasses() as $className => $path) {
-
-            $class = new DataObject\ClassDefinition();
-            
-            try {
-                $id = $class->getDao()->getIdByName($className);
-            } catch (\Pimcore\Model\Exception\NotFoundException $e) {
-                $id = false;
-            }
-
-            if ($id !== false) {
-                continue;
-            }
-
-            $class->setName($className);
-
-            $data = file_get_contents($path);
-            DataObject\ClassDefinition\Service::importClassDefinitionFromJson($class, $data);
-
-        }
-    }
-
-    public function installTranslations(): void
-    {
-        $csv = $this->installSourcesPath . '/translations/data.csv';
-        Translation::importTranslationsFromFile($csv, Translation::DOMAIN_ADMIN, true, Tool\Admin::getLanguages());
-    }
-
-    public function createFolders(): void
-    {
-        $root = DataObject\Folder::getByPath('/news');
-        $entries = DataObject\Folder::getByPath('/news/entries');
-        $categories = DataObject\Folder::getByPath('/news/categories');
-
-        if (!$root instanceof DataObject\Folder) {
-            $root = DataObject\Folder::create([
-                'o_parentId'         => 1,
-                'o_creationDate'     => time(),
-                'o_userOwner'        => $this->getUserId(),
-                'o_userModification' => $this->getUserId(),
-                'o_key'              => 'news',
-                'o_published'        => true,
-            ]);
-        }
-
-        if (!$entries instanceof DataObject\Folder) {
-            DataObject\Folder::create([
-                'o_parentId'         => $root->getId(),
-                'o_creationDate'     => time(),
-                'o_userOwner'        => $this->getUserId(),
-                'o_userModification' => $this->getUserId(),
-                'o_key'              => 'entries',
-                'o_published'        => true,
-            ]);
-        }
-
-        if (!$categories instanceof DataObject\Folder) {
-            DataObject\Folder::create([
-                'o_parentId'         => $root->getId(),
-                'o_creationDate'     => time(),
-                'o_userOwner'        => $this->getUserId(),
-                'o_userModification' => $this->getUserId(),
-                'o_key'              => 'categories',
-                'o_published'        => true,
-            ]);
-        }
-    }
-
-    public function installStaticRoutes(): void
-    {
-        $conf = file_get_contents(__DIR__ . '/../Resources/install/staticroutes.json');
-        $routes = $this->serializer->decode($conf, 'json');
-
-        foreach ($routes['routes'] as $def) {
-            if (!Staticroute::getByName($def['name'])) {
-                $route = Staticroute::create();
-                $route->setName($def['name']);
-                $route->setPattern($def['pattern']);
-                $route->setReverse($def['reverse']);
-                $route->setController($def['controller']);
-                $route->setVariables($def['variables']);
-                $route->setPriority($def['priority']);
-                $route->save();
-            }
-        }
-    }
-
-    protected function getClasses(): array
-    {
-        $result = [];
-
-        foreach ($this->classes as $className) {
-            $filename = sprintf('class_%s_export.json', $className);
-            $path = dirname(__DIR__) . '/Resources/install/classes' . '/' . $filename;
-            $path = realpath($path);
-
-            if (false === $path || !is_file($path)) {
-                throw new \RuntimeException(sprintf(
-                    'Class export for class "%s" was expected in "%s" but file does not exist',
-                    $className, $path
-                ));
-            }
-
-            $result[$className] = $path;
-        }
-
-        return $result;
     }
 
     protected function getUserId(): int
