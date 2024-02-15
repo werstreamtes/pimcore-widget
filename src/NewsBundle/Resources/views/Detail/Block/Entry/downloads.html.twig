@@ -1,0 +1,22 @@
+{# single download for detail view #}
+
+{% block news_detail_entry_download %}
+
+    {% import '@News/Macro/download.html.twig' as download_macro %}
+
+    {% if entry.getDownloads() is iterable and entry.getDownloads()|length > 0 %}
+
+        <div class="detail-entry-downloads entry-downloads">
+
+            <h4>{{ 'Downloads'|trans }}</h4>
+            <ul class="news-ul">
+                {% for download in entry.getDownloads() %}
+                    {{ download_macro.news_download(download) }}
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    {% endif %}
+
+{% endblock news_detail_entry_download %}
