@@ -1,5 +1,22 @@
+{% set urlField = pimcore_input('url') %}
+{% set Disc = pimcore_checkbox('Disc') %}
+{% set TV = pimcore_checkbox('TV') %}
+{% set Trailer = pimcore_checkbox('Trailer') %}
+
 {% if editmode %}
-    edit
+    <div class="alert alert-info">
+        <h2>WerStreamt.es? Widget</h2>
+        <div>
+            URL: {{ urlField | raw }}
+        </div>
+    </div>
 {% else %}
-    <div class="wse-widget"><a rel="noopener" href="https://www.werstreamt.es/film/details/30464/planet-der-affen-prevolution/" target="_blank">Verfügbarkeit von Planet der Affen: Prevolution auf WerStreamt.es prüfen</a><script async src="https://www.werstreamt.es/_resources/themes/wse/js/widget.v4.min.js" charset="utf-8"></script></div>
+    {% if not urlField.isEmpty() %}
+        <div
+            class="wse-widget {{ Disc != "1" ? "wse-no-disc" : "" }} {{ TV != "1" ? "wse-no-tv" : "" }} {{ Trailer != "1" ? "wse-no-trailer" : "" }}">
+            <a rel="noopener" href="{{ urlField }}?tag={{ pimcore_website_config('wseWidgetTag', 'extern') }}" target="_blank">Verfügbarkeit auf WerStreamt.es prüfen</a>
+            <script async src="https://www.werstreamt.es/_resources/themes/wse/js/widget.v4.min.js"
+                    charset="utf-8"></script>
+        </div>
+    {% endif %}
 {% endif %}
