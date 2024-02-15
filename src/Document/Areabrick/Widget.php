@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Document\Areabrick;
+namespace Pimcore\Bundle\WidgetBundle\Document\Areabrick;
 
 use Pimcore\Extension\Document\Areabrick\AbstractTemplateAreabrick;
 
