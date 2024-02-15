@@ -17,7 +17,7 @@ use WidgetBundle\Manager\EntryTypeManager;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\Document;
 
-class News extends AbstractAreabrick implements EditableDialogBoxInterface
+class Widget extends AbstractAreabrick implements EditableDialogBoxInterface
 {
     protected Document $document;
     protected Configuration $configuration;

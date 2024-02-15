@@ -5,7 +5,7 @@ services:
         autoconfigure: true
         public: false
 
-    WidgetBundle\Twig\Extension\NewsExtension:
+    WidgetBundle\Twig\Extension\WidgetExtension:
         arguments:
             $imageThumbnails: '%image_thumbnails%'
         tags:

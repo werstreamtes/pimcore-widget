@@ -7,7 +7,7 @@ use WidgetBundle\Model\EntryInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-class NewsExtension extends AbstractExtension
+class WidgetExtension extends AbstractExtension
 {
     private LinkGeneratorInterface $linkGenerator;
     private array $imageThumbnails;

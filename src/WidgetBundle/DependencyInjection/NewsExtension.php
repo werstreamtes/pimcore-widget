@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use WidgetBundle\Configuration\Configuration as BundleConfiguration;
 
-class NewsExtension extends Extension
+class WidgetExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
