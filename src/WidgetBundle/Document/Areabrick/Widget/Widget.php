@@ -1,6 +1,6 @@
 <?php
 
-namespace WidgetBundle\Document\Areabrick\News;
+namespace WidgetBundle\Document\Areabrick\Widget;
 
 use WidgetBundle\Event\NewsBrickEvent;
 use WidgetBundle\NewsEvents;
