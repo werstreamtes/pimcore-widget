@@ -13,12 +13,12 @@ class Widget extends AbstractTemplateAreabrick
 
     public function getDescription()
     {
-        return 'Embed contents from other URL (websites) via iframe';
+        return 'Mit dem Widget kannst du Verfügbarkeitsinformationen zu Filmen und Serien direkt auf deiner Webseite anzeigen.';
     }
 
     public function getTemplateLocation()
     {
-        return static::TEMPLATE_LOCATION_GLOBAL;
+        return static::TEMPLATE_LOCATION_BUNDLE;
     }
 
     public function needsReload(): bool
