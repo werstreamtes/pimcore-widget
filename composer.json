@@ -1,16 +1,30 @@
 {
   "name": "werstreamtes/pimcore-widget",
-  "description": "WerStreamt.es Widget as Pimcore Brick",
+  "type": "pimcore-bundle",
   "license": "GPL-3.0-or-later",
-  "type": "library",
-  "require": {
-    "composer/installers": "~1.0"
+  "description": "WerStreamt.es Widget",
+  "keywords": ["pimcore", "werstreamtes", "widget"],
+  "authors": [
+    {
+      "name": "WerStreamt.es",
+      "email": "info@werstreamt.es",
+      "homepage": "https://www.werstreamt.es/",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WseWidget\\": "src/pimcore-widget"
+    }
   },
   "extra": {
-    "installer-paths": {
-      "src/{$name}/": [
-        "vendor:my_organization"
+    "pimcore": {
+      "bundles": [
+        "WseWidget\\WseWidget"
       ]
     }
+  },
+  "require": {
+    "pimcore/pimcore": "^10.2"
   }
 }
