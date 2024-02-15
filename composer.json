@@ -14,13 +14,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "WseWidget\\": "src/pimcore-widget"
+      "WidgetBundle\\": "src/WidgetBundle"
     }
   },
   "extra": {
     "pimcore": {
       "bundles": [
-        "WseWidget\\WseWidget"
+        "WidgetBundle\\WidgetBundle"
       ]
     }
   },
