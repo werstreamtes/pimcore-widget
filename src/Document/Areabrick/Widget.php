@@ -9,16 +9,26 @@ use Pimcore\Model\Document\Editable\Area\Info;
 
 class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInterface
 {
-    public function getName()
+
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
         return 'Widget';
     }
 
-    public function getDescription()
+    /**
+     * @return string
+     */
+    public function getDescription(): string
     {
         return 'Mit dem Widget kannst du Verfügbarkeitsinformationen zu Filmen und Serien direkt auf deiner Webseite anzeigen.';
     }
 
+    /**
+     * @return mixed
+     */
     public function getTemplateLocation()
     {
         return static::TEMPLATE_LOCATION_BUNDLE;
@@ -67,6 +77,9 @@ class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInter
 
     }
 
+    /**
+     * @return bool
+     */
     public function needsReload(): bool
     {
         // optional
