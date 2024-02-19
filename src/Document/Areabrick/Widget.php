@@ -47,26 +47,26 @@ class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInter
         $config->setHeight(250);
 
         $config->setItems([
-            "type" => "tabpanel",
-            "items" => [
+            'type' => 'tabpanel',
+            'items' => [
                 [
-                    "type" => "panel",
-                    "title" => "Einstellungen",
-                    "items" => [
+                    'type' => 'panel',
+                    'title' => 'Einstellungen',
+                    'items' => [
                         [
-                            "type" => "checkbox",
-                            "name" => "Disc",
-                            "label" => "DVD / Blu-ray anzeigen"
+                            'type' => 'checkbox',
+                            'name' => 'Disc',
+                            'label' => 'DVD / Blu-ray anzeigen'
                         ],
                         [
-                            "type" => "checkbox",
-                            "name" => "TV",
-                            "label" => "TV anzeigen"
+                            'type' => 'checkbox',
+                            'name' => 'TV',
+                            'label' => 'TV anzeigen'
                         ],
                         [
-                            "type" => "checkbox",
-                            "name" => "Trailer",
-                            "label" => "Trailer anzeigen"
+                            'type' => 'checkbox',
+                            'name' => 'Trailer',
+                            'label' => 'Trailer anzeigen'
                         ]
                     ]
                 ]
