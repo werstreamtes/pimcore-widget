@@ -13,8 +13,9 @@
 {% else %}
     {% if not urlField.isEmpty() %}
         <div
-            class="wse-widget {{ Disc != "1" ? "wse-no-disc" : "" }} {{ TV != "1" ? "wse-no-tv" : "" }} {{ Trailer != "1" ? "wse-no-trailer" : "" }}">
-            <a rel="noopener" href="{{ urlField }}?tag={{ pimcore_website_config('wseWidgetTag', 'extern') }}" target="_blank">Verfügbarkeit auf WerStreamt.es prüfen</a>
+                class="wse-widget {{ Disc != "1" ? "wse-no-disc" : "" }} {{ TV != "1" ? "wse-no-tv" : "" }} {{ Trailer != "1" ? "wse-no-trailer" : "" }}">
+            <a rel="noopener" href="{{ urlField }}?tag={{ pimcore_website_config('wseWidgetTag', 'extern') }}"
+               target="_blank">Verfügbarkeit auf WerStreamt.es prüfen</a>
             <script async src="https://www.werstreamt.es/_resources/themes/wse/js/widget.v4.min.js"
                     charset="utf-8"></script>
         </div>
