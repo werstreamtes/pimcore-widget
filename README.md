@@ -17,7 +17,7 @@ Install the widget using composer:
 composer require werstreamtes/pimcore-widget
 ```
 
-or via composer.json
+or via composer.json:
 ```json
 "require" : {
     "werstreamtes/pimcore-widget" : "1.0.0",
