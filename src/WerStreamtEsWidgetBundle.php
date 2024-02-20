@@ -18,16 +18,32 @@ declare(strict_types=1);
 namespace Pimcore\Bundle\WidgetBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
+use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 
-class WerStreamtEsWidgetBundle extends AbstractPimcoreBundle
+class WerStreamtEsWidgetBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
 {
     use PackageVersionTrait;
 
-    public function getCssPaths() {
+    public function getCssPaths(): array {
         return [
-            'bundles/WSEWidget/css/style.css'
+            'bundles/werstreamteswidget/css/style.css'
         ];
+    }
+
+    public function getJsPaths(): array
+    {
+       return [];
+    }
+
+    public function getEditmodeJsPaths(): array
+    {
+       return [];
+    }
+
+    public function getEditmodeCssPaths(): array
+    {
+       return [];
     }
 
     /**
