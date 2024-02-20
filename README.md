@@ -32,7 +32,7 @@ bin/console pimcore:bundle:enable WerStreamtEsWidgetBundle
 ## Important to know
 After installation, a new entry `wseWidgetTag` must be added under `Website Settings`. This setting is filled with the desired partner tag.
 
-![General Settings](settings.png)
+![General Settings](settings.gif)
 
 ## Further Information
 
