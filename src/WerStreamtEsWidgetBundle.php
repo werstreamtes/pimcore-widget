@@ -21,30 +21,9 @@ use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 
-class WerStreamtEsWidgetBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
+class WerStreamtEsWidgetBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
-
-    public function getCssPaths(): array {
-        return [
-            'bundles/werstreamteswidget/css/style.css'
-        ];
-    }
-
-    public function getJsPaths(): array
-    {
-       return [];
-    }
-
-    public function getEditmodeJsPaths(): array
-    {
-       return [];
-    }
-
-    public function getEditmodeCssPaths(): array
-    {
-       return [];
-    }
 
     /**
      * @return string
