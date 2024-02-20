@@ -24,6 +24,12 @@ class WerStreamtEsWidgetBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
 
+    public function getCssPaths() {
+        return [
+            'bundles/WSEWidget/css/style.css'
+        ];
+    }
+
     /**
      * @return string
      */
