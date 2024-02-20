@@ -4,13 +4,14 @@
 * [Pimcore Widget](#pimcore-widget)
   * [Requirements](#requirements)
   * [Installation](#installation)
-  * [Important to know](#important-to-know)
+  * [Good to know](#good-to-know)
   * [Further Information](#further-information)
 <!-- TOC -->
-## Requirements
-This widget is designed for use with Pimcore 10.2 or higher
 
-## Installation
+### Requirements
+This widget is designed for use with Pimcore 10.2 or higher.
+
+### Installation
 Install the widget using composer:
 
 ```shell
@@ -29,13 +30,17 @@ Activate the widget using the following command:
 bin/console pimcore:bundle:enable WerStreamtEsWidgetBundle
 ```
 
-## Important to know
-After installation, a new entry `wseWidgetTag` must be added under `Website Settings`. This setting is filled with the desired partner tag.
+### Good to know
+
+If you are part of the WerStreamt.es partner program, you can save your tag in the website settings.
+
+Go to the website settings and create a new entry with the key `wseWidgetTag` of type `Text`. You can fill this with your partner tag.
 
 ![General Settings](settings.gif)
 
-## Further Information
+### Further Information
 
-[WerStreamt.es Developer Widget Documentation](https://www.werstreamt.es/developers/widget/)
+* [WerStreamt.es Developer Widget Documentation](https://www.werstreamt.es/developers/widget/)
+
 
 Feel free to reach out if you have any questions or issues!
