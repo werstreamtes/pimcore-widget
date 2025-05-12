@@ -21,7 +21,7 @@ composer require werstreamtes/pimcore-widget
 or via composer.json:
 ```json
 "require" : {
-    "werstreamtes/pimcore-widget" : "1.0.0",
+    "werstreamtes/pimcore-widget" : "1.0.1",
 }
 ```
 
