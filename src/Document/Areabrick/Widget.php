@@ -23,7 +23,7 @@ class Widget extends AbstractTemplateAreabrick implements EditableDialogBoxInter
      */
     public function getDescription(): string
     {
-        return 'Mit dem Widget kannst du Verfügbarkeitsinformationen zu Filmen und Serien direkt auf deiner Webseite anzeigen.';
+        return 'Verfügbarkeitsinformationen zu Filmen und Serien';
     }
 
     /**
